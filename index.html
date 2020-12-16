@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>ТикТакБум</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="row text-white bg-info rounded">
+      <div class="col text-center">
+        <h1 class="font-weight-bold">ТИК-ТАК-БУМ 💣</h1>
+      </div>
+    </div>
+    <div class="row border border-primary rounded-pill mt-2">
+      <div class="col text-center">
+        <span id="gameStatusField"></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 mt-2">
+        <img src="./img/bomb.png" class="mx-auto d-block" />
+        <div class="timer-output text-center" id="timerField">00:00</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-12 p-0">
+        <textarea class="form-control" id="questionField" rows="2"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col p-0">
+        <div id="answer1" class="col btn form-control btn btn-secondary text-left answer"></div>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col p-0">
+        <div id="answer2" class="col btn form-control btn btn-secondary text-left answer"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col p-0 mt-3">
+        <button type="button" class="btn btn-primary" id="btnFinish">
+          Закончить
+        </button>
+              <button type="button" class="btn btn-primary" id="btnAgain">
+          Начать заново
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="container border border-primary mt-3" id="param">
+    <div class="row">
+      <div class="col col-md-3 p-0">
+        <label for="countOfPlayersField">Количество игроков (1-4)</label>
+        <input type="number" class="form-control" id="countOfPlayersField" min="1" max="4" placeholder="1" value="1">
+      </div>
+      <div class="col col-md-4">
+        <label for="boomTimerFields">Время игры (30...300 сек)</label>
+        <input type="number" class="form-control" id="boomTimerFields" min="30" max="300" placeholder="30" value="30">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col p-0 mt-3">
+        <button type="button" class="btn btn-primary" id="btnStart">
+          Старт
+        </button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+          Правила игры
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Правила игры</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Принять участие в игре могут до 4 игроков. В начале игры необходимо указать количество игроков, время на игру
+          в соответствующем поле и нажать на клавишу "Старт". 
+          После этого вам будет дано время на подготовку (3 секунды) и появится вопрос, на который необходимо дать ответ из предложенных вариантов.
+          Каждый раз после ответа будет появляться новый вопрос и так далее.<br>
+          Для ответов на вопросы каждому игроку дается время, указанное в начале игры, по истечении которого
+          игроку начисляется 1 балл за каждый неправильный ответ. Кто наберет 3 балла, тот покидает игру!
+          За не правильный ответ отнимается 5 сек. За правильный прибавляется 5 сек.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/tikTakBoom.js"></script>
+  <script src="js/tikTakBoomTasks.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

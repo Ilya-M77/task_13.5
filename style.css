@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap");
+
+body {
+  font-family: "Caveat", cursive;
+  background-color: #c0c0c0;
+}
+
+.container {
+  width: 600px;
+}
+
+#gameStatusField {
+  font-size: 150%;
+  color: #c10000;
+}
+
+.timer-output {
+  position: absolute;
+  top: 45%;
+  left: -40px;
+  right: 0;
+  transform: translateY(-50%);
+
+  /* width: 100px; */
+  /* background: #222; */
+  color: darkred;
+  /* padding: 16px 8px; */
+  font-size: 70px;
+  /* text-align: center; */
+  /* line-height: 1; */
+  user-select: none;
+}
+
+.timer-output-wrapper {
+  /* width: calc(100% - 24px); */
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* align-content: center; */
+  justify-content: center;
+  /* margin: 12px; */
+}
+
+img {
+  width: 400px;
+  height: auto;
+  /* max-width: 100%; */
+  display: block;
+}
+
+.btn {
+    font-size: 130%;
+}
+
+#btnFinish {
+  display: none;
+}
+
+#btnAgain {
+  display: none;
+}
+
+#questionField {
+    font-size: 150%;
+}
